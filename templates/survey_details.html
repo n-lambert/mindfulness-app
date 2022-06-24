@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{user_survey_answer.date}} Survey{% endblock %}
+
+{% block body %}
+<h1>{{user_survey_answer.date}}</h1>
+    <ul>
+            <li>Mood: {{user_survey_answer.q1}}</li>
+            <li>Motivation: {{user_survey_answer.q2}}</li>
+            <li>Trouble Relaxing: {{user_survey_answer.q3}}</li>
+            <li>Not being able to stop or control worrying: {{user_survey_answer.q4}}</li>
+            <li>Feeling afraid, as if something awful might happen: {{user_survey_answer.q5}}</li>
+            <li>Throughts: {{journal_response[0].response}}</li>
+    </ul>
+{% endblock %}

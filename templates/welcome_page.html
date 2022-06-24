@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Welcome Page{% endblock %}
+
+{% block body %}
+  <h1>Hi, {{session_user.name}}!</h1>
+  <h2>Mindfulness Reminder:</h2>
+  <h3>{{ affirmation_quotes.affirmation }}</h3>
+  <h4>Where to?</h4>
+  <ul>
+    <li><a href="/survey">Take the Survey</a></li>
+    <li><a href="/profile-page">View Profile</a></li>
+  </ul>
+{% endblock %}

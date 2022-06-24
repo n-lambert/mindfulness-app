@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}{{session_user.name}}'s Profile Page{% endblock %}
+
+{% block body %}
+  <h1>Hi, {{session_user.name}}!</h1>
+    <p>This will contain summary text about past surveys.</p>
+  <ul>
+    <li><a href="/past-surveys">View Past Surveys</a></li>
+    <li><a href="/journal">Thoughts Timecapsule</a></li>
+  </ul>
+{% endblock %}

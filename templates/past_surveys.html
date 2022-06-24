@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Past Surveys{% endblock %}
+
+{% block body %}
+<h1>{{session_user.name}}'s Survey Responses</h1>
+<ul>
+    {% for survey in user_survey_answers %}
+        <li>
+            <a href="/survey-details/{{ survey.survey_answer_id }}">
+                {{ survey.date }}
+             </a>         
+        </li>   
+    {% endfor %}
+    </ul>
+
+{% endblock %}
