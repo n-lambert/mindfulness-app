@@ -66,13 +66,18 @@ def login_user():
         session.modified = True
         user_id = existing_user.user_id
         activities = crud.get_all_activities_by_user_id(user_id)
-        flash('Logged in!')
-        print(user_id)
+        survey_answers = crud.get_all_survey_answers_by_user_id(user_id)
+        print('\n'*5)
         print(activities)
+        print(survey_answers)
+        print('\n'*5)
+        flash('Logged in!')
         if len(activities) == 0:
-            return redirect ('/intake-survey')
+            return redirect('/intake-survey')
+        elif len(survey_answers) == 0:
+            return redirect('/survey')
         else:
-            return redirect ('/welcome-page')
+            return redirect('/profile-page')
     else:
         flash('Incorrect password!')
         return redirect('/log-in')
@@ -111,8 +116,12 @@ def take_intake_survey():
     db.session.commit()
 
     flash('Survey Submitted!')
+
+    survey_answers = crud.get_all_survey_answers_by_user_id(user_id)
+    if len(survey_answers) == 0:
+        return redirect('/survey')
     
-    return redirect("/welcome-page")
+    return redirect("/profile-page")
 
 @app.route("/survey")
 def show_survey_form():
@@ -142,7 +151,7 @@ def take_survey():
 
     flash('Survey Submitted!')
     
-    return redirect("/welcome-page")
+    return redirect("/profile-page")
 
 @app.route("/profile-page")
 def show_profile_page():
@@ -150,8 +159,9 @@ def show_profile_page():
     user_email = session['user_email']
     session_user = crud.get_user_by_email(user_email)
     user_name = session_user.name
+    affirmation_quotes = requests.get('https://www.affirmations.dev/').json()
 
-    return render_template("profile_page.html", session_user=session_user)
+    return render_template("profile_page.html", session_user=session_user, affirmation_quotes=affirmation_quotes)
 
 @app.route ("/past-surveys")
 def show_all_users_past_surveys():
@@ -175,10 +185,20 @@ def show_user_survey_answers(survey_answer_id):
     user_id = session_user.user_id
     user_survey_answer = crud.get_survey_answer_by_survey_answer_id(survey_answer_id)
     journal_response = crud.get_journal_entry_by_user_id_and_date(user_id, user_survey_answer.date)
-    # print(journal_response)
     
     return render_template("survey_details.html", journal_response=journal_response, survey_answer_id=survey_answer_id, session_user=session_user, user_survey_answer=user_survey_answer)
 
+@app.route('/journal')
+def show_user_journal_prompts():
+    """Get survey answers."""
+
+    user_email = session['user_email']
+    session_user = crud.get_user_by_email(user_email)
+    user_name = session_user.name
+    user_id = session_user.user_id
+    journal_responses = crud.get_all_journal_entries_by_user_id(user_id)
+    
+    return render_template("thoughts.html", journal_responses=journal_responses, session_user=session_user, user_name=user_name)
 
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
