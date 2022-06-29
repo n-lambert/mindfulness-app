@@ -3,7 +3,8 @@
 
 {% block body %}
 <h2>{{date}}</h2>
-<p>The following questions are all rated on a scale of 1-5 with 5 being the highest/everyday and 1 being the lowest/not at all.</p>
+<p>The following questions are aimed to capture how you're feeling at this moment. Questions are rated 
+    on a scale of 1-5 with 5 being the highest and 1 being the lowest/not at all.</p>
 <form action="/survey" method="POST">
   <h3>How would you rate your mood today?</h3>
     <p>
@@ -18,7 +19,7 @@
       <input type="radio" name="q1_survey-answer" id="rate-5" value="5" required>
       <label for="rate-5">5</label>
     </p>
-  <h3>Motivation level:</h3>
+  <h3>Anxiety level:</h3>
     <p>
       <input type="radio" name="q2_survey-answer" id="rate-1" value="1" required>
       <label for="rate-1">1</label>
@@ -31,7 +32,7 @@
       <input type="radio" name="q2_survey-answer" id="rate-5" value="5" required>
       <label for="rate-5">5</label>
     </p>
-  <h3>Trouble Relaxing:</h3>
+  <h3>Stress level:</h3>
     <p>
       <input type="radio" name="q3_survey-answer" id="rate-1" value="1" required>
       <label for="rate-1">1</label>
@@ -44,7 +45,7 @@
       <input type="radio" name="q3_survey-answer" id="rate-5" value="5" required>
       <label for="rate-5">5</label>
     </p>
-  <h3>Not being able to stop or control worrying:</h3>
+  <h3>Fatigue level:</h3>
     <p>
       <input type="radio" name="q4_survey-answer" id="rate-1" value="1" required>
       <label for="rate-1">1</label>
@@ -57,7 +58,7 @@
       <input type="radio" name="q4_survey-answer" id="rate-5" value="5" required>
       <label for="rate-5">5</label>
     </p>
-  <h3>Feeling afraid, as if something awful might happen:</h3>
+  <h3>Restless/Fidgety?</h3>
     <p>
       <input type="radio" name="q5_survey-answer" id="rate-1" value="1" required>
       <label for="rate-1">1</label>
@@ -71,7 +72,8 @@
       <label for="rate-5">5</label>
 
   <h3>Thoughts...</h3>
-      <!-- <label for="journal_prompt"></label> -->
+    <p>This is an open area for you to be able to write down any thoughts, 
+        feelings, and events associated with today.</p>
     <p>
       <input type="text" name="journal_prompt" id="journal_prompt"><br>
     </p>

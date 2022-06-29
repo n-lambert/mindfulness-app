@@ -3,6 +3,7 @@
 from flask import (Flask, render_template, request, flash, session,
                    redirect)
 from model import connect_to_db, db
+from random import choice, randint
 import crud
 import datetime
 import requests
@@ -178,11 +179,11 @@ def take_survey():
     date = datetime.date.today()
 
     # pulls input from each survey answer
-    q1 = request.form.get("q1_survey-answer")
-    q2 = request.form.get("q2_survey-answer")
-    q3 = request.form.get("q3_survey-answer")
-    q4 = request.form.get("q4_survey-answer")
-    q5 = request.form.get("q5_survey-answer")
+    q1 = int(request.form.get("q1_survey-answer"))
+    q2 = int(request.form.get("q2_survey-answer"))
+    q3 = int(request.form.get("q3_survey-answer"))
+    q4 = int(request.form.get("q4_survey-answer"))
+    q5 = int(request.form.get("q5_survey-answer"))
 
     # pulls input from the journal response 
     response = request.form.get("journal_prompt")
@@ -203,6 +204,25 @@ def take_survey():
     db.session.commit()
 
     flash('Survey Submitted!')
+
+    activities = crud.get_all_activities_by_user_id(user_id)
+
+    questions = [q1, q2, q3, q4, q5]
+
+
+    print("\n"*5)
+    print(activities)
+    print("\n"*5)
+    print(questions)
+    print(sum(questions))
+    print("\n"*5)
+
+    if sum(questions) >= 14:
+        flash(f'Try one of these activities to promote mindfulness: {choice(activities).activity_idea}')
+        return redirect("/profile-page")
+    # find average of survey answers
+    #     if avergae below given number, flash rand(activtiy) called from crub function
+
     
     return redirect("/profile-page")
 
