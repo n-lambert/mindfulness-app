@@ -5,6 +5,8 @@
 <h1>{{user_name}}'s Thoughts Timecapsule</h1>
     {% for response in journal_responses %}
         <h2>{{response.date}}</h2>  
-        <p>{{response.response}}</p> 
+        <textarea id="edit_{{response.journal_response_id}}">{{response.response}}</textarea> 
+        <button id="{{response.journal_response_id}}" class="save_edits" type="button">Save Changes</button>
     {% endfor %}
+<script src="/static/thoughts_buttons.js"></script>
 {% endblock %}

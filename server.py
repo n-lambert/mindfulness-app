@@ -66,11 +66,9 @@ def login_user():
         session.modified = True
         user_id = existing_user.user_id
         activities = crud.get_all_activities_by_user_id(user_id)
-        survey_answers = crud.get_all_survey_answers_by_user_id(user_id)
-        print('\n'*5)
-        print(activities)
-        print(survey_answers)
-        print('\n'*5)
+        date = datetime.date.today()
+        survey_answers = crud.get_survey_answers_by_user_id_and_date(user_id, date=date)
+       
         flash('Logged in!')
         if len(activities) == 0:
             return redirect('/intake-survey')
@@ -200,6 +198,25 @@ def show_user_journal_prompts():
     
     return render_template("thoughts.html", journal_responses=journal_responses, session_user=session_user, user_name=user_name)
 
+@app.route("/journal", methods=["POST"])
+def update_journal_entries():
+    """Update a past journal entry."""
+
+    user_email = session['user_email']
+    session_user = crud.get_user_by_email(user_email)
+    user_name = session_user.name
+    user_id = session_user.user_id
+
+    journal_id = request.json.get("journal_id")
+    edits = request.json.get("edits")
+
+    journal_responses = crud.get_journal_entry_by_id(journal_id)
+    journal_responses.response = edits
+    db.session.commit()
+
+    return ""
+
+   
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
     connect_to_db(app)

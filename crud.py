@@ -77,16 +77,16 @@ def get_journal_prompts():
 def get_all_journal_entries_by_user_id(user_id):
     """Returns all journal prompts according to user."""
 
-    return JournalPrompt.query.filter(JournalPrompt.user_id == user_id).all() 
+    return JournalPrompt.query.filter(JournalPrompt.user_id == user_id).order_by(JournalPrompt.date).all() 
 
-# def get_all_journal_entries_by_date(date):
-#     """Returns every users journal entry on a given day."""
+def get_journal_entry_by_id(journal_response_id):
+    """Returns every users journal entry on a given day."""
 
-#     return JournalPrompt.query.filter(JournalPrompt.date == date).all()
+    return JournalPrompt.query.filter(JournalPrompt.journal_response_id == journal_response_id).first()
 
 def get_journal_entry_by_user_id_and_date(user_id, date):
     """Returns a specific user's entry on a specific day."""
-    print(user_id, date)
+    
     return JournalPrompt.query.filter(JournalPrompt.user_id == user_id, JournalPrompt.date == date).all()
 
 #-------------------Activity functions---------------------
