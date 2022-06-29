@@ -10,17 +10,15 @@ class User(db.Model):
 
     __tablename__ = "users"
 
-    user_id = db.Column(db.Integer,
-                        autoincrement=True,
-                        primary_key=True)
+    # creates columns
+    user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
     name = db.Column(db.String)
 
-    # survey_answers magic attribute
-    # journal_responses magic attribute
-    # activities magic attribute
-    
+    # survey_answers, journal_responses, activities magic attribute
+
+    # how the object is displayed in the terminal
     def __repr__(self):
         return f'<User user_id={self.user_id} name={self.name} email={self.email}>'
 
@@ -30,6 +28,7 @@ class SurveyAnswer(db.Model):
 
     __tablename__ = "survey_answers"
 
+    # creates columns
     survey_answer_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
     date = db.Column(db.Date)
@@ -39,8 +38,10 @@ class SurveyAnswer(db.Model):
     q4 = db.Column(db.Integer)
     q5 = db.Column(db.Integer)
     
+    # establishes a special relationship between tables
     user = db.relationship("User", backref="survey_answers")
 
+    # how the object is displayed in the terminal
     def __repr__(self):
         return f"<SurveyAnswer survey_answer_id={self.survey_answer_id} q1={self.q1} date={self.date}>"
 
@@ -50,13 +51,16 @@ class JournalPrompt(db.Model):
 
     __tablename__ = "journal_responses"
 
+    # creates columns
     journal_response_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
     date = db.Column(db.Date)
     response = db.Column(db.Text)
 
+    # establishes a special relationship between tables
     user = db.relationship("User", backref="journal_responses")
 
+    # how the object is displayed in the terminal
     def __repr__(self):
         return f"<JournalPrompt journal_response_id={self.journal_response_id} date={self.date}>"
 
@@ -66,18 +70,19 @@ class Activity(db.Model):
 
     __tablename__ = "activities"
 
+    # creates columns
     activity_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
     activity_idea = db.Column(db.Text)
 
+    # establishes a special relationship between tables
     user = db.relationship("User", backref="activities")
 
-
-
+    # how the object is displayed in the terminal
     def __repr__(self):
         return f"<Activity activity_id={self.activity_id} activity_idea={self.activity_idea}>"
+        
 
-# ask for more explanation lines 78-86
 def connect_to_db(flask_app, db_uri="postgresql:///database", echo=True):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     flask_app.config["SQLALCHEMY_ECHO"] = echo
