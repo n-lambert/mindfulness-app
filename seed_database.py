@@ -10,17 +10,11 @@ import model
 import server
 import requests
 
-#os.system is like running a command on the terminal 
-#when u run see_database.py and gets to line 14-15, tell command
-#to dropdb ratings, runs only when u run seed_database.py
 os.system("dropdb database")
 os.system('createdb database')
 
-# affirmation_quotes = requests.get('https://www.affirmations.dev/').json()
-# for quote in affirmation_quotes:
-
 model.connect_to_db(server.app)
-model.db.create_all() #creates all tables
+model.db.create_all()                    # creates all tables
 
 lst_of_activities = ['Go for a walk',
 'Listen to music',
@@ -32,22 +26,22 @@ lst_of_activities = ['Go for a walk',
 'Laugh']
 
 for n in range(10):
-    name = f"user{n}" # unique name
-    email = f"user{n}@test.com"  # unique email
+    name = f"user{n}"                     # creates unique name
+    email = f"user{n}@test.com"           # unique email
     password = "test"
 
     user = crud.create_user(email=email, password=password, name=name)
-    model.db.session.add(user)
-    model.db.session.commit()
+    model.db.session.add(user)            # makes a user and adds to session
+    model.db.session.commit()             # commits each user create in loop
 
-    q1 = randint(1, 5)
+    q1 = randint(1, 5)                    # gives value to each question
     q2 = randint(1, 5)
     q3 = randint(1, 5)
     q4 = randint(1, 5)
     q5 = randint(1, 5)
 
     answer = crud.create_survey_answer(user.user_id, q1, q2, q3, q4, q5)
-    model.db.session.add(answer)
+    model.db.session.add(answer)          # adds survey answers to the session
 
     journal_response = "My journal entry"
 
@@ -60,7 +54,5 @@ for n in range(10):
         activity = crud.create_activity(user.user_id, activity_idea=random_activity)
         model.db.session.add(activity)
         
-    model.db.session.commit()
-
-# model.db.session.commit()
+    model.db.session.commit()            # commits survey answers, journal response, and activities
 
