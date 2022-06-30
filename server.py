@@ -205,24 +205,14 @@ def take_survey():
 
     flash('Survey Submitted!')
 
+    # gets activities and puts all value from the form in a list
     activities = crud.get_all_activities_by_user_id(user_id)
-
     questions = [q1, q2, q3, q4, q5]
 
-
-    print("\n"*5)
-    print(activities)
-    print("\n"*5)
-    print(questions)
-    print(sum(questions))
-    print("\n"*5)
-
+    # adds up core for the day and if sum > 14, flash one of their mindfulness activities
     if sum(questions) >= 14:
         flash(f'Try one of these activities to promote mindfulness: {choice(activities).activity_idea}')
         return redirect("/profile-page")
-    # find average of survey answers
-    #     if avergae below given number, flash rand(activtiy) called from crub function
-
     
     return redirect("/profile-page")
 
