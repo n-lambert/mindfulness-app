@@ -209,8 +209,8 @@ def take_survey():
     activities = crud.get_all_activities_by_user_id(user_id)
     questions = [q1, q2, q3, q4, q5]
 
-    # adds up core for the day and if sum > 14, flash one of their mindfulness activities
-    if sum(questions) >= 14:
+    # adds up core for the day and if sum < 10, flash one of their mindfulness activities
+    if sum(questions) <= 10:
         flash(f'Try one of these activities to promote mindfulness: {choice(activities).activity_idea}')
         return redirect("/profile-page")
     
