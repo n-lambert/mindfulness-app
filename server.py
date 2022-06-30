@@ -225,10 +225,13 @@ def show_profile_page():
     session_user = crud.get_user_by_email(user_email)
     user_name = session_user.name
 
+    example_list = [3,3,3,3,3,3,3]
+
     # calls API everytime page is loaded for a new mindfulness reminder
     affirmation_quotes = requests.get('https://www.affirmations.dev/').json()
 
-    return render_template("profile_page.html", session_user=session_user, affirmation_quotes=affirmation_quotes)
+    return render_template("profile_page.html", session_user=session_user, example_list=example_list,
+                            affirmation_quotes=affirmation_quotes)
 
 @app.route ("/past-surveys")
 def show_all_users_past_surveys():
