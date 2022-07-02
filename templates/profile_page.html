@@ -3,51 +3,13 @@
 
 {% block head %}
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const labels = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-    ];
-  
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: {{example_list}},
-      }]
-    };
-  
-    const config = {
-      type: 'line',
-      data: data,
-      options: {}
-    };
-  </script>
-  
 {% endblock %}
-
 
 {% block body %}
   <h1>Hi, {{session_user.name}}!</h1>
   <h2>Mindfulness Reminder:</h2>
   <h3>{{ affirmation_quotes.affirmation }}</h3>
-      
-      <div>
-        <canvas id="myChart"></canvas>
-        <script>
-          const myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-          );
-        </script>
-      </div>  
-
+ 
   <ul>
     <li><a href="/past-surveys">View Past Surveys</a></li>
     <li><a href="/journal">Thoughts Timecapsule</a></li>

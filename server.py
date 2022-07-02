@@ -307,6 +307,31 @@ def update_journal_entries():
 
     return ""
 
+@app.route('/survey_answers_this_week.json')
+def get_survey_answers_for_chart():
+    """Get melon sales data as JSON."""
+
+    survey_dates = []
+    date = datetime.now() # I think this needs to change and needs to be a db query
+    for _ in range(7):
+        survey_dates.append(date)
+        date = date - timedelta(days=1)
+    survey_answers = [20, 24, 36, 27, 20, 17, 22] # I think this needs to be a db query 
+
+    weekly_survey_answers = zip(survey_dates, survey_answers)  # list of tuples (datetime, int)
+
+    answers_this_week = []
+    for date, answer in weekly_survey_answers:
+        # `date` is a datetime object; datetime objects can't be JSONified,
+        # so we have to convert it to a string with `date.isoformat()`
+        # ISO is a standard date/time format that most progamming languages can parse
+        # See https://www.iso.org/iso-8601-date-and-time-format.html for more.
+
+        answers_this_week.append({'date': date.isoformat(),
+                                'question': answer}) # I think 'question' needs to be something else
+
+    return jsonify({'data': answers_this_week})
+
    
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
