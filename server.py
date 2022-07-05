@@ -225,8 +225,6 @@ def show_profile_page():
     session_user = crud.get_user_by_email(user_email)
     user_name = session_user.name
 
-    example_list = [3,3,3,3,3,3,3]
-
     # calls API everytime page is loaded for a new mindfulness reminder
     affirmation_quotes = requests.get('https://www.affirmations.dev/').json()
 
