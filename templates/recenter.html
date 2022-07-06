@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% include 'index.html' %}
+
+{% block title %}Mindfulness Activities{% endblock %}
+
+{% block body %}
+
+  <h2>Recenter yourself with an activity!</h2>
+  <h3>{{ rand_activity.activity_idea }}</h3>
+  <button id="new_activity_button" class="new_activity" type="button">New Activity</button>
+
+{% endblock %}

@@ -332,6 +332,14 @@ def get_survey_answers_for_chart():
 
     return jsonify({'data': answers_this_week})
 
+@app.route('/recenter')
+def show_mindfulness_activtiy():
+    """Show a random activity from any user."""
+    all_activities = crud.get_all_activities()
+    rand_activity = choice(all_activities)
+
+    return render_template("recenter.html", rand_activity=rand_activity)
+
    
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
