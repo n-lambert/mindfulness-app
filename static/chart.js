@@ -29,26 +29,31 @@ console.log(q5_data)
           {
             label: 'Mood',
             data: q1_data,
+            borderColor: randomColor(),
           },
 
           {
             label: 'Calmness',
             data: q2_data, 
+            borderColor: randomColor(),
           },
 
           {
             label: 'Care-Free',
             data: q3_data, 
+            borderColor: randomColor(),
           },
 
           {
             label: 'Energetic',
             data: q4_data, 
+            borderColor: randomColor(),
           },
 
           {
             label: 'Active',
             data: q5_data, 
+            borderColor: randomColor(),
           },
         ],
       },
@@ -61,6 +66,17 @@ console.log(q5_data)
               unit: 'day',
             },
           },
+          y: {
+            title: {
+              display: true,
+              text: 'Answers'
+            },
+            min: 0,
+            suggestedMax: 5,
+            ticks: {
+              stepSize: 1
+            }
+          }
         },
       },
     });

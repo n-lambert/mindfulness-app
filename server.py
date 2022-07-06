@@ -92,7 +92,7 @@ def login_user():
             return redirect('/intake-survey')
             
         # checks to see if the survey was filled out for the current day
-        elif len(survey_answers) == 0:
+        elif not survey_answers:
             return redirect('/survey')
 
         # if the user has taken the intake survey and daily survey, go to profile page
@@ -159,7 +159,7 @@ def take_intake_survey():
     survey_answers = crud.get_all_survey_answers_by_user_id(user_id)
 
     # brings user to daily survey
-    if len(survey_answers) == 0:
+    if not survey_answers:
         return redirect('/survey')
     
     # if survey has already been taken then they go to profile page
