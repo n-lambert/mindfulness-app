@@ -1,11 +1,11 @@
 """Server for daily mantras app."""
 
 from flask import (Flask, render_template, request, flash, session,
-                   redirect)
+                   redirect, jsonify)
 from model import connect_to_db, db
 from random import choice, randint
 import crud
-import datetime
+from datetime import datetime, timedelta
 import requests
 
 from jinja2 import StrictUndefined
@@ -78,7 +78,7 @@ def login_user():
         session.modified = True
         
         user_id = existing_user.user_id
-        date = datetime.date.today()
+        date = datetime.now().date()
 
         # returns list object from database
         activities = crud.get_all_activities_by_user_id(user_id)
@@ -121,7 +121,7 @@ def show_intake_survey():
     """Show intake survey."""
 
     # this ensures that each survey has the correct date stamp of the day it was taken
-    date = datetime.date.today()
+    date = datetime.now().date()
 
     return render_template("intake_survey.html", date=date)
 
@@ -129,7 +129,7 @@ def show_intake_survey():
 def take_intake_survey():
     """Capture intake survey answers"""
 
-    date = datetime.date.today()
+    date = datetime.now().date()
 
     # pulls the input for each activity
     activity_idea_1 = request.form.get("activity_1")
@@ -169,14 +169,14 @@ def take_intake_survey():
 def show_survey_form():
     """Show daily survey."""
 
-    date = datetime.date.today()
+    date = datetime.now().date()
     return render_template('survey.html', date=date)
 
 @app.route("/survey", methods=["POST"])
 def take_survey():
     """Capture survey answers"""
 
-    date = datetime.date.today()
+    date = datetime.now().date()
 
     # pulls input from each survey answer
     q1 = int(request.form.get("q1_survey-answer"))
@@ -228,7 +228,7 @@ def show_profile_page():
     # calls API everytime page is loaded for a new mindfulness reminder
     affirmation_quotes = requests.get('https://www.affirmations.dev/').json()
 
-    return render_template("profile_page.html", session_user=session_user, example_list=example_list,
+    return render_template("profile_page.html", session_user=session_user,
                             affirmation_quotes=affirmation_quotes)
 
 @app.route ("/past-surveys")
@@ -307,26 +307,28 @@ def update_journal_entries():
 
 @app.route('/survey_answers_this_week.json')
 def get_survey_answers_for_chart():
-    """Get melon sales data as JSON."""
+    """Get survey data as JSON."""
 
-    survey_dates = []
-    date = datetime.now() # I think this needs to change and needs to be a db query
-    for _ in range(7):
-        survey_dates.append(date)
-        date = date - timedelta(days=1)
-    survey_answers = [20, 24, 36, 27, 20, 17, 22] # I think this needs to be a db query 
-
-    weekly_survey_answers = zip(survey_dates, survey_answers)  # list of tuples (datetime, int)
+    user_email = session['user_email']
+    session_user = crud.get_user_by_email(user_email)
+    user_id = session_user.user_id
 
     answers_this_week = []
-    for date, answer in weekly_survey_answers:
-        # `date` is a datetime object; datetime objects can't be JSONified,
-        # so we have to convert it to a string with `date.isoformat()`
-        # ISO is a standard date/time format that most progamming languages can parse
-        # See https://www.iso.org/iso-8601-date-and-time-format.html for more.
+    date = datetime.now().date() 
+    for _ in range(7):
+        survey_answer_by_user = crud.get_survey_answers_by_user_id_and_date(user_id=user_id, date=date)
+        if not survey_answer_by_user:
+            continue
+        print(user_id)
+        print(date)
+        answers_this_week.append({'date': date.isoformat(), 
+                                'q1_answer': survey_answer_by_user.q1, 
+                                'q2_answer': survey_answer_by_user.q2,
+                                'q3_answer': survey_answer_by_user.q3,
+                                'q4_answer': survey_answer_by_user.q4,
+                                'q5_answer': survey_answer_by_user.q5})
+        date = date - timedelta(days=1)
 
-        answers_this_week.append({'date': date.isoformat(),
-                                'question': answer}) # I think 'question' needs to be something else
 
     return jsonify({'data': answers_this_week})
 

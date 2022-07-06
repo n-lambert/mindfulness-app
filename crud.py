@@ -54,7 +54,7 @@ def get_all_survey_answers_by_date(date):
 def get_survey_answers_by_user_id_and_date(user_id, date):
     """Returns a specific user's survey answers on a specific day."""
 
-    return SurveyAnswer.query.filter(SurveyAnswer.user_id == user_id, SurveyAnswer.date == date).all()
+    return SurveyAnswer.query.filter(SurveyAnswer.user_id == user_id, SurveyAnswer.date == date).first()
 
 def get_survey_answer_by_survey_answer_id(survey_answer_id):
 
@@ -87,7 +87,7 @@ def get_journal_entry_by_id(journal_response_id):
 def get_journal_entry_by_user_id_and_date(user_id, date):
     """Returns a specific user's entry on a specific day."""
     
-    return JournalPrompt.query.filter(JournalPrompt.user_id == user_id, JournalPrompt.date == date).all()
+    return JournalPrompt.query.filter(JournalPrompt.user_id == user_id, JournalPrompt.date == date).first()
 
 #-------------------Activity functions---------------------
 
