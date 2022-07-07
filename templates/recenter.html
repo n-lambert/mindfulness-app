@@ -6,7 +6,8 @@
 {% block body %}
 
   <h2>Recenter yourself with an activity!</h2>
-  <h3>{{ rand_activity.activity_idea }}</h3>
+  <h3 id="random_activity">{{ rand_activity.activity_idea }}</h3>
   <button id="new_activity_button" class="new_activity" type="button">New Activity</button>
-
+  
+  <script src="/static/recenter.js"></script>
 {% endblock %}

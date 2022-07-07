@@ -335,10 +335,21 @@ def get_survey_answers_for_chart():
 @app.route('/recenter')
 def show_mindfulness_activtiy():
     """Show a random activity from any user."""
+
     all_activities = crud.get_all_activities()
     rand_activity = choice(all_activities)
 
     return render_template("recenter.html", rand_activity=rand_activity)
+
+@app.route('/get-recenter')
+def get_new_random_activity():
+    """Get new random activity."""
+
+    all_activities = crud.get_all_activities()
+    rand_activity = choice(all_activities)
+
+    return rand_activity.activity_idea
+
 
    
 if __name__ == "__main__":
