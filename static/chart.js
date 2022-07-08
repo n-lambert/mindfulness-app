@@ -51,7 +51,7 @@ console.log(q5_data)
           },
 
           {
-            label: 'Active',
+            label: 'Rested',
             data: q5_data, 
             borderColor: randomColor(),
           },
