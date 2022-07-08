@@ -350,6 +350,13 @@ def get_new_random_activity():
 
     return rand_activity.activity_idea
 
+@app.route("/logout")
+def logout():
+    """logs out current user"""
+
+    session.pop("user_email")
+
+    return redirect ("/")
 
    
 if __name__ == "__main__":
