@@ -6,19 +6,6 @@
 <p>The following questions are aimed to capture how you're feeling at this moment.</p>
 
 <form action="/survey" method="POST">
-  <!-- <h3>How would you rate your mood today?</h3>
-    <p>
-      <input type="radio" name="q1_survey-answer" id="rate-1" value="1" required>
-      <label for="rate-1">1</label>
-      <input type="radio" name="q1_survey-answer" id="rate-2" value="2" required>
-      <label for="rate-2">2</label>
-      <input type="radio" name="q1_survey-answer" id="rate-3" value="3" required>
-      <label for="rate-3">3</label>
-      <input type="radio" name="q1_survey-answer" id="rate-4" value="4" required>
-      <label for="rate-4">4</label>
-      <input type="radio" name="q1_survey-answer" id="rate-5" value="5" required>
-      <label for="rate-5">5</label> 
-    </p> -->
 
   <h3>How would you rate your mood today?</h3>
     <label for="q1_survey-answer">Bad Day</label>
@@ -26,39 +13,11 @@
       min="1" max="5" step="1" value="this.value" required>
     <label for="q1_survey_answer">Good Day</label>
 
-  <!-- <h3>Calmness level:</h3>
-    <p>
-      <input type="radio" name="q2_survey-answer" id="rate-1" value="1" required>
-      <label for="rate-1">1</label>
-      <input type="radio" name="q2_survey-answer" id="rate-2" value="2" required>
-      <label for="rate-2">2</label>
-      <input type="radio" name="q2_survey-answer" id="rate-3" value="3" required>
-      <label for="rate-3">3</label>
-      <input type="radio" name="q2_survey-answer" id="rate-4" value="4" required>
-      <label for="rate-4">4</label>
-      <input type="radio" name="q2_survey-answer" id="rate-5" value="5" required>
-      <label for="rate-5">5</label>
-    </p> -->
-
   <h3>How would you rate your calmness level?</h3>
     <label for="q2_survey-answer">Restless</label>
     <input style="width: 300px;" name="q2_survey-answer" id="q2_survey_answer" type="range" 
       min="1" max="5" step="1" value="this.value" required>
     <label for="q2_survey_answer">Calm</label>
-
-  <!-- <h3>How care free do you feel?</h3>
-    <p>
-      <input type="radio" name="q3_survey-answer" id="rate-1" value="1" required>
-      <label for="rate-1">1</label>
-      <input type="radio" name="q3_survey-answer" id="rate-2" value="2" required>
-      <label for="rate-2">2</label>
-      <input type="radio" name="q3_survey-answer" id="rate-3" value="3" required>
-      <label for="rate-3">3</label>
-      <input type="radio" name="q3_survey-answer" id="rate-4" value="4" required>
-      <label for="rate-4">4</label>
-      <input type="radio" name="q3_survey-answer" id="rate-5" value="5" required>
-      <label for="rate-5">5</label>
-    </p> -->
 
   <h3>How care free do you feel?</h3>
     <label for="q3_survey-answer">Worried</label>
@@ -66,39 +25,11 @@
       min="1" max="5" step="1" value="this.value" required>
     <label for="q3_survey_answer">Care Free</label>
 
-  <!-- <h3>How energetic do you feel?</h3>
-    <p>
-      <input type="radio" name="q4_survey-answer" id="rate-1" value="1" required>
-      <label for="rate-1">1</label>
-      <input type="radio" name="q4_survey-answer" id="rate-2" value="2" required>
-      <label for="rate-2">2</label>
-      <input type="radio" name="q4_survey-answer" id="rate-3" value="3" required>
-      <label for="rate-3">3</label>
-      <input type="radio" name="q4_survey-answer" id="rate-4" value="4" required>
-      <label for="rate-4">4</label>
-      <input type="radio" name="q4_survey-answer" id="rate-5" value="5" required>
-      <label for="rate-5">5</label>
-    </p> -->
-
   <h3>How energetic do you feel?</h3>
     <label for="q4_survey-answer">Low Energy</label>
     <input style="width: 300px;" name="q4_survey-answer" id="q4_survey_answer" type="range" 
       min="1" max="5" step="1" value="this.value" required>
     <label for="q4_survey_answer">High Energy</label>
-
-  <!-- <h3>How active are you?</h3>
-    <p>
-      <input type="radio" name="q5_survey-answer" id="rate-1" value="1" required>
-      <label for="rate-1">1</label>
-      <input type="radio" name="q5_survey-answer" id="rate-2" value="2" required>
-      <label for="rate-2">2</label>
-      <input type="radio" name="q5_survey-answer" id="rate-3" value="3" required>
-      <label for="rate-3">3</label>
-      <input type="radio" name="q5_survey-answer" id="rate-4" value="4" required>
-      <label for="rate-4">4</label>
-      <input type="radio" name="q5_survey-answer" id="rate-5" value="5" required>
-      <label for="rate-5">5</label>
-    </p> -->
 
   <h3>How rested do you feel?</h3>
     <label for="q5_survey-answer">Tired</label>
@@ -116,6 +47,6 @@
   <p>
     <input type="submit">
   </p>
-  
+
 </form>
 {% endblock %}
