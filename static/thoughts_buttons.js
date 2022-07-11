@@ -1,3 +1,4 @@
+'use strict';
 // putting event listeners on each edit button for the thoughts timecapsule
 for (const button of document.querySelectorAll('.save_edits')) { // loops through all buttons with class save_edits
     button.addEventListener('click', (evt) => {                  // adds event listener
@@ -15,9 +16,9 @@ for (const button of document.querySelectorAll('.save_edits')) { // loops throug
             'Content-Type': 'application/json',
         },
         })
-        .then((response) => response.text())                     // turns the data back into text
-        .then((responseJson) => { 
-            alert("Saved!");                                     // local host alerts user that edits were saved
+        .then((response) => response.text())                    // turns the data back into text
+        // .then((responseJson) => { 
+        //     alert("Saved!");                                     // local host alerts user that edits were saved
             // alert(responseJson.status);
-        });
+        // });
     }); }

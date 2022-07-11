@@ -1,19 +1,61 @@
 {% extends 'base.html' %}
-{% block title %}Create an Account{% endblock %}
+{% block title %}Sign In{% endblock %}
+
+{% block head %}
+
+{% endblock %}
 
 {% block body %}
-<h1>Log In</h1>
-  <form action="/log-in" method="POST">
-    <p>
-      Email <input type="text" name="email">
-    </p>
+<body class="text-center" data-new-gr-c-s-check-loaded="14.1067.0" data-gr-ext-installed="">
+    
+  <main class="form-signin">
+    <form action="/log-in" method="POST">
+    
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  
+      <div class="form-floating">
+        <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">© Mindfulness Matters</p>
+    </form>
+  </main>
+  </body>
+  <!-- <form class="form-signin" action="/log-in" method="POST">
 
-    <p>
-      Password <input type="password" name="password">
-    </p>
+    <h1 class="h3 mb-3 fw-normal">Please log in</h1>
 
-    <p>
-      <input type="submit">
-    </p>
-  </form>
+    <div class="form-floating">
+      <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+
+       <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" 
+        placeholder="Email address" name="email" required autofocus> 
+      
+    <div class="form-floating">
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+       <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control"
+          placeholder="Password" name="password" required> 
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+
+    </form>
+  </body> -->
   {% endblock %}
