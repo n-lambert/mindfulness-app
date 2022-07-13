@@ -132,3 +132,32 @@ body{
     box-shadow: 10px 10px black;
     text-align: center;
 }
+
+.journal-entry{
+    display: flex;
+    flex-direction: column;
+}
+
+.response-box{
+    height: 200px;
+    width: 1000px;
+    resize: auto;
+    margin: auto;
+    text-align: justify;
+}
+
+.response-button{
+    padding-top: 5px;
+    padding-right: 150px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.response-title{
+    margin-left: 70px;
+    padding-top: 10px;
+}
+
+.timecapsule-title{
+    margin: 10px;
+}
