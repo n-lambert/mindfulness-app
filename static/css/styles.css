@@ -27,12 +27,12 @@
     align-items: center;
     display: flex;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 80px;
     max-width: 374px;
 }
 
 #log-in-form{
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .logout-button{
@@ -107,4 +107,8 @@ body{
 
 .survey-question-and-input{
     padding-bottom: 15px;
+}
+
+.link{
+    padding-top: 5px;
 }
