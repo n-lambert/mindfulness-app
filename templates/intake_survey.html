@@ -2,25 +2,40 @@
 {% block title %}Intake Survey{% endblock %}
 
 {% block body %}
-<h2></h2>
-<p>Mindfulness can be impacted by physical things and the purpose of this survey 
+<header class="mb-auto">
+  <div>
+    <!-- <h3 class="float-md-start mb-0">MindFly</h3> -->
+    <img src="../static/images/plane.png" alt="" width="50" height="50">
+  </div>
+</header>
+<h3 class="survey-date-title">Minfulness Activities</h2>
+<p class="intake-survey-text">Our mental states can be impacted by physical things and the enviroment around us. The purpose of this survey 
     is for you to think about activities you do to center yourself. Whether its sitting in the sun
     or going on an adventure, it's all about what works for you.</p>
+
 <form action="/intake-survey" method="POST">
-  <h3>Activity 1:</h3>
-    <p>
-        <input type="text" name="activity_1" id="activity_1" required>
-    </p>
-  <h3>Activity 2:</h3>
-    <p>
-        <input type="text" name="activity_2" id="activity_2" required>
-    </p>
-    <h3>Activity 3:</h3>
-    <p>
-        <input type="text" name="activity_3" id="activity_3" required>
-    </p>
-  <p>
-    <input type="submit">
-  </p>
+  <div class="intake-survey">
+    <div class="survey-question-and-input">
+      <h3>Activity 1</h3>
+        <p>
+            <input type="text" name="activity_1" id="activity_1" required/>
+        </p>
+    </div>
+    <div class="survey-question-and-input">
+      <h3>Activity 2</h3>
+        <p>
+            <input type="text" name="activity_2" id="activity_2" required/>
+        </p>
+    </div>    
+    <div class="survey-question-and-input">
+        <h3>Activity 3</h3>
+        <p>
+            <input type="text" name="activity_3" id="activity_3" required/>
+        </p>
+    </div>  
+  </div>  
+      <p class="intake-button">
+        <button type="submit" style="width: 200px;" class="btn btn-outline-dark">Submit</button>
+      </p>
 </form>
 {% endblock %}

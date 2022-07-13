@@ -59,6 +59,28 @@
     padding-bottom: 75px;
 }
 
+.intake-survey-text{
+    display: flex;
+    margin: auto;
+    text-align: center;
+    padding-top: 25px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 45px; 
+}
+
+.intake-survey{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.intake-button{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+
 .homepage-buttons{
     display: flex;
     margin: auto;
