@@ -1,0 +1,65 @@
+.login-alert{
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.sign-in-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 31%;
+    margin: auto;
+}
+
+.form-floating {
+    position: relative;
+    margin: 12px
+}
+
+.sign-in-title{
+    padding-top: 20px;
+}
+
+.sign-in-buttons{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 374px;
+}
+
+#log-in-form{
+    margin-top: 100px;
+}
+
+.logout-button{
+    margin: auto;
+}
+
+.homepage{
+    background-image: url("../images/homepage.jpg");
+    background-size: cover;
+}
+
+.homepage-title{
+    display: flex;
+    margin: auto;
+}
+
+.homepage-text{
+    display: flex;
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 75px;
+}
+
+.homepage-buttons{
+    display: flex;
+    margin: auto;
+}
