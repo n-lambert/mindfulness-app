@@ -161,3 +161,18 @@ body{
 .timecapsule-title{
     margin: 10px;
 }
+
+.survey-details-container{
+    display: flex;
+    justify-content: center;
+}
+
+.survey-details-subcontainer{
+    width: 60%;
+    margin: 50px;
+    background: grey;
+    padding: 100px;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    /* text-align: center; */
+}
