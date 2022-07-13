@@ -2,9 +2,17 @@
 {% block title %}{{date}} Survey{% endblock %}
 
 {% block body %}
+<header class="mb-auto">
+  <div>
+    <!-- <h3 class="float-md-start mb-0">MindFly</h3> -->
+    <img src="../static/images/plane.png" alt="" width="50" height="50">
+  </div>
+</header>
+
 <h2>{{date}}</h2>
 <p>The following questions are aimed to capture how you're feeling at this moment.</p>
 
+<div class="daily-survey">
 <form action="/survey" method="POST">
 
   <h3>How would you rate your mood today?</h3>
@@ -49,4 +57,5 @@
   </p>
 
 </form>
+</div>
 {% endblock %}
