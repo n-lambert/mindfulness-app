@@ -4,10 +4,17 @@
 {% block title %}Mindfulness Activities{% endblock %}
 
 {% block body %}
-
-  <h2>Recenter yourself with an activity!</h2>
-  <h3 id="random_activity">{{ rand_activity.activity_idea }}</h3>
-  <button id="new_activity_button" class="new_activity" type="button">New Activity</button>
-  
+  <div class="recenter-container">
+    <div class="recenter-subcontainer">
+      <h3>Recenter yourself with an activity!</h3>
+      <p>Looking for more ways to promote mindfulness? </p>
+      <p>Try one of these activities other user's do to recenter themselves!</p>
+      <h4 id="random_activity">{{ rand_activity.activity_idea }}</h4>
+      <!-- <button id="new_activity_button" class="new_activity" type="button">New Activity</button> -->
+      <button type="button" id="new_activity_button" style="width: 200px;" 
+        class=" new_activity btn btn-outline-dark">Get New Activity
+      </button>
+    </div>
+  </div>
   <script src="/static/recenter.js"></script>
 {% endblock %}

@@ -112,3 +112,23 @@ body{
 .link{
     padding-top: 5px;
 }
+
+.chart{
+    height: 400px;
+    width: 800px;
+}
+
+.recenter-container{
+    display: flex;
+    justify-content: center;
+}
+
+.recenter-subcontainer{
+    width: 60%;
+    margin: 115px;
+    background: grey;
+    padding: 100px;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    text-align: center;
+}

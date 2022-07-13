@@ -65,6 +65,10 @@ console.log(q5_data)
               tooltipFormat: 'LLLL dd', // Luxon format string
               unit: 'day',
             },
+            title: {
+              display: true,
+              text: 'Date'
+            },
           },
           y: {
             title: {
