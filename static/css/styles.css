@@ -67,3 +67,22 @@
 .daily-survey{
     text-align: center;
 }
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.survey-date-title{
+    text-align: center;
+    font-size: 4vw;
+}
+.survey-explanation-text{
+    text-align: center;
+}
+.survey-question{
+    font-size: 22px;
+}
+
+.survey-question-and-input{
+    padding-bottom: 15px;
+}
