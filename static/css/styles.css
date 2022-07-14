@@ -9,7 +9,7 @@
 .sign-in-container{
     display: flex;
     flex-direction: column;
-    max-width: 31%;
+    max-width: 70%;
     margin: auto;
 }
 
@@ -27,12 +27,12 @@
     align-items: center;
     display: flex;
     margin: auto;
-    margin-top: 80px;
-    max-width: 374px;
+    margin-top: 65px;
+    max-width: 70%;
 }
 
 #log-in-form{
-    margin-top: 80px;
+    margin-top: 35px;
 }
 
 .logout-button{
@@ -202,10 +202,39 @@ body{
 
 .homepage-subcontainer{
     width: 60%;
-    /* margin: 115px; */
     background: #a7a6a6;;
     padding: 100px;
     border-radius: 20px;
     box-shadow: 10px 10px black;
     text-align: center;
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+}
+
+.login-subcontainer{
+    width: 35%;
+    background: #a7a6a6;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.account-container{
+    display: flex;
+    justify-content: center;
+}
+
+.account-subcontainer{
+    width: 35%;
+    background: #a7a6a6;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 40px;
 }

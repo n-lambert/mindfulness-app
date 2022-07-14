@@ -3,35 +3,38 @@
 
 {% block body %}
 <body class="text-center" data-new-gr-c-s-check-loaded="14.1067.0" data-gr-ext-installed="">
-    
-  <main class="form-create-account">
-    <form id="log-in-form" action="/create-account" method="POST">
-    <img src="../static/images/plane.png" alt="" width="72" height="57">
-    
-      <h1 class="h3 mb-3 fw-normal sign-in-title">Create An Account</h1>
-      <div class="sign-in-container">
-        <div class="form-floating">
-          <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating">
-          <input name="name" type="text" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Name</label>
-        </div>
-        <div class="form-floating">
-          <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Password</label>
-        </div>
-      </div>
-      <div class="sign-in-buttons">
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Create Account</button>
-      </div>
-      <div class="link">
-        <a href="/log-in">Existing user? Click here.</a>
-      </div>
-      <p class="mt-5 mb-3 text-muted">© MindFly: Set Your Mind Free</p>
-    </form>
-  </main>
-  </body>
+  <div class="account-container">  
+    <div class="account-subcontainer">  
+      <main class="form-create-account">
+        <form id="log-in-form" action="/create-account" method="POST">
+        <img src="../static/images/plane.png" alt="" width="72" height="57">
+        
+          <h1 class="h3 mb-3 fw-normal sign-in-title">Create An Account</h1>
+          <div class="sign-in-container">
+            <div class="form-floating">
+              <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+              <input name="name" type="text" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Name</label>
+            </div>
+            <div class="form-floating">
+              <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+          </div>
+          <div class="sign-in-buttons">
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Create Account</button>
+          </div>
+          <div class="link">
+            <a href="/log-in">Existing user? Click here.</a>
+          </div>
+          <p class="mt-5 mb-3 text-muted">© MindFly: Set Your Mind Free</p>
+        </form>
+      </main>
+    </div>
+  </div>
+</body>
   
 {% endblock %}
