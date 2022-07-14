@@ -269,3 +269,28 @@ body{
     margin-top: 50px;
     margin-bottom: 40px;
 }
+
+.profile-container{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-subcontainer{
+    width: 65%;
+    background: #a7a6a6;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.profile-text{
+    text-align: justify;
+    margin-left: 40px;
+    margin-top: 2%;
+}
+
+.profile-title{
+    padding-top: 2%;
+}

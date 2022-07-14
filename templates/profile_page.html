@@ -16,13 +16,20 @@
 {% endblock %}
 
 {% block body %}
-  <h1>Hi, {{session_user.name}}!</h1>
-  <h2>Mindfulness Reminder:</h2>
-  <h3>{{ affirmation_quotes.affirmation }}</h3>
-  
-  <div class="chart">
-    <canvas id="myChart"></canvas>
+<div class="profile-container">
+  <div class="profile-subcontainer">
+    <div class="profile-text">
+      <div class="profile-tittle">
+        <h3>Hi, {{session_user.name}}!</h3>
+    </div class="affirmation-text">
+        <h4>Mindfulness Reminder: {{ affirmation_quotes.affirmation }}</h4>
+        <!-- <p>{{ affirmation_quotes.affirmation }}</p> -->
+        <p>Take a look at your survey results for the week:</p>
+    </div>
+      <div class="chart">
+        <canvas id="myChart"></canvas>
+      </div>
   </div>
-  
+</div>
   <script src="/static/chart.js"></script>
 {% endblock %}
