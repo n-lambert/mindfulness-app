@@ -51,16 +51,18 @@
 .homepage-title{
     display: flex;
     margin: auto;
+    justify-content: center;
 }
 
 .homepage-text{
     display: flex;
     margin: auto;
     text-align: center;
-    padding-top: 40px;
-    padding-left: 75px;
-    padding-right: 75px;
-    padding-bottom: 75px;
+    padding-top: 30px;
+    /* padding-left: 75px; */
+    /* padding-right: 75px; */
+    padding-bottom: 60px;
+    text-align: justify;
 }
 
 .intake-survey-text{
@@ -88,6 +90,7 @@
 .homepage-buttons{
     display: flex;
     margin: auto;
+    justify-content: center;
 }
 
 .daily-survey{
@@ -190,4 +193,19 @@ body{
 
 .past-survey-container{
     margin: 5px;
+}
+
+.homepage-container{
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-subcontainer{
+    width: 60%;
+    /* margin: 115px; */
+    background: #a7a6a6;;
+    padding: 100px;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    text-align: center;
 }
