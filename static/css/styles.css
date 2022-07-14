@@ -107,6 +107,7 @@ body{
 .survey-date-title{
     text-align: center;
     font-size: 4vw;
+    margin-top: 30px;
 }
 .survey-explanation-text{
     text-align: center;
@@ -236,5 +237,35 @@ body{
     box-shadow: 10px 10px black;
     text-align: center;
     margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+.survey-container{
+    display: flex;
+    justify-content: center;
+}
+
+.survey-subcontainer{
+    width: 65%;
+    background: #a7a6a6;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 40px;
+}
+
+.intake-container{
+    display: flex;
+    justify-content: center;
+}
+
+.intake-subcontainer{
+    width: 65%;
+    background: #a7a6a6;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    text-align: center;
+    margin-top: 50px;
     margin-bottom: 40px;
 }

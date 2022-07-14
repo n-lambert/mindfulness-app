@@ -9,57 +9,63 @@
   </div>
 </header>
 
-<h3 class="survey-date-title">{{date}}</h3>
-<p class="survey-explanation-text">The following questions are aimed to capture how you're feeling at this moment.</p>
 
 <div class="daily-survey">
-<form action="/survey" method="POST">
-  <div class="survey-question-and-input">
-    <h3 class="survey-question">How would you rate your mood today?</h3>
-      <label for="q1_survey-answer">Bad Day</label>
-      <input style="width: 300px;" name="q1_survey-answer" id="q1_survey_answer" type="range" 
-        min="1" max="5" step="1" value="this.value" required>
-      <label for="q1_survey_answer">Good Day</label>
-  </div>
-  <div class="survey-question-and-input">
-    <h3 class="survey-question">How would you rate your calmness level?</h3>
-      <label for="q2_survey-answer">Restless</label>
-      <input style="width: 300px;" name="q2_survey-answer" id="q2_survey_answer" type="range" 
-        min="1" max="5" step="1" value="this.value" required>
-      <label for="q2_survey_answer">Calm</label>
-  </div>
-    <h3 class="survey-question">How care free do you feel?</h3>
-      <label for="q3_survey-answer">Worried</label>
-      <input style="width: 300px;" name="q3_survey-answer" id="q3_survey_answer" type="range" 
-        min="1" max="5" step="1" value="this.value" required>
-      <label for="q3_survey_answer">Care Free</label>
-  <div class="survey-question-and-input">
-    <h3 class="survey-question">How energetic do you feel?</h3>
-      <label for="q4_survey-answer">Low Energy</label>
-      <input style="width: 300px;" name="q4_survey-answer" id="q4_survey_answer" 
-        type="range" min="1" max="5" step="1" value="this.value" required>
-      <label for="q4_survey_answer">High Energy</label>
-  </div>
-  <div class="survey-question-and-input">
-    <h3 class="survey-question">How rested do you feel?</h3>
-      <label for="q5_survey-answer">Tired</label>
-      <input style="width: 300px;" name="q5_survey-answer" id="q5_survey_answer" type="range" 
-        min="1" max="5" step="1" value="this.value" required>
-      <label for="q5_survey_answer">Rested</label>
-  </div>
-  <div class="survey-question-and-input">
-    <h3 class="survey-question">Thoughts...</h3>
-      <p>This is an open area for you to be able to write down any thoughts, 
-          feelings, and events associated with today.</p>
-      <textarea type="text" style="width: 600px;height: 170px;resize: none;"
-        name="journal_prompt" id="journal_prompt">
-      </textarea>
-    </div>
-  <p>
-    <!-- <input type="submit"> -->
-    <button type="submit" style="width: 200px;" class="btn btn-outline-dark">Submit</button>
-  </p>
+  <div class="survey-container">
+    <div class="survey-subcontainer">
 
-</form>
+      <h3 class="survey-date-title">{{date}}</h3>
+      <p class="survey-explanation-text">The following questions are aimed to capture how you're feeling at this moment.</p>
+
+      <form action="/survey" method="POST">
+        <div class="survey-question-and-input">
+          <h3 class="survey-question">How would you rate your mood today?</h3>
+            <label for="q1_survey-answer">Bad Day</label>
+            <input style="width: 300px;" name="q1_survey-answer" id="q1_survey_answer" type="range" 
+              min="1" max="5" step="1" value="this.value" required>
+            <label for="q1_survey_answer">Good Day</label>
+        </div>
+        <div class="survey-question-and-input">
+          <h3 class="survey-question">How would you rate your calmness level?</h3>
+            <label for="q2_survey-answer">Restless</label>
+            <input style="width: 300px;" name="q2_survey-answer" id="q2_survey_answer" type="range" 
+              min="1" max="5" step="1" value="this.value" required>
+            <label for="q2_survey_answer">Calm</label>
+        </div>
+          <h3 class="survey-question">How care free do you feel?</h3>
+            <label for="q3_survey-answer">Worried</label>
+            <input style="width: 300px;" name="q3_survey-answer" id="q3_survey_answer" type="range" 
+              min="1" max="5" step="1" value="this.value" required>
+            <label for="q3_survey_answer">Care Free</label>
+        <div class="survey-question-and-input">
+          <h3 class="survey-question">How energetic do you feel?</h3>
+            <label for="q4_survey-answer">Low Energy</label>
+            <input style="width: 300px;" name="q4_survey-answer" id="q4_survey_answer" 
+              type="range" min="1" max="5" step="1" value="this.value" required>
+            <label for="q4_survey_answer">High Energy</label>
+        </div>
+        <div class="survey-question-and-input">
+          <h3 class="survey-question">How rested do you feel?</h3>
+            <label for="q5_survey-answer">Tired</label>
+            <input style="width: 300px;" name="q5_survey-answer" id="q5_survey_answer" type="range" 
+              min="1" max="5" step="1" value="this.value" required>
+            <label for="q5_survey_answer">Rested</label>
+        </div>
+        <div class="survey-question-and-input">
+          <h3 class="survey-question">Thoughts...</h3>
+            <p>This is an open area for you to be able to write down any thoughts, 
+                feelings, and events associated with today.</p>
+            <textarea type="text" style="width: 600px; height: 170px; resize: none; border-radius: 20px;"
+              name="journal_prompt" id="journal_prompt">
+            </textarea>
+          </div>
+        <p>
+          <!-- <input type="submit"> -->
+          <button type="submit" style="width: 200px;" class="btn btn-outline-dark">Submit</button>
+        </p>
+
+      </form>
+    </div>
+  </div>
 </div>
 {% endblock %}
