@@ -4,44 +4,46 @@
 {% block title %}{{user_name}}'s Thoughts Timecapsule{% endblock %}
 
 {% block body %}
-<h1 class="timecapsule-title">{{user_name}}'s Thoughts Timecapsule</h1>
-    {% for response in journal_responses %}
-        <div class="journal-container">
-            <div class="journal-subcontainer">
-                <div class="journal-entry">
-                    <div class="response-title">
-                        <h2>{{response.date}}</h2>
+<body class="thoughts-background">
+    <h1 class="timecapsule-title">{{user_name}}'s Thoughts Timecapsule</h1>
+        {% for response in journal_responses %}
+            <div class="journal-container">
+                <div class="journal-subcontainer">
+                    <div class="journal-entry">
+                        <div class="response-title">
+                            <h2>{{response.date}}</h2>
+                        </div>
+                        <textarea class="response-box" id="edit_{{response.journal_response_id}}">{{response.response}}</textarea> 
+                        <!-- <button id="{{response.journal_response_id}}" class="save_edits" type="button">Save Changes</button> -->
+                        <!-- Button trigger modal -->
                     </div>
-                    <textarea class="response-box" id="edit_{{response.journal_response_id}}">{{response.response}}</textarea> 
-                    <!-- <button id="{{response.journal_response_id}}" class="save_edits" type="button">Save Changes</button> -->
-                    <!-- Button trigger modal -->
+                        <div class="response-button">
+                            <button id="{{response.journal_response_id}}" type="button" style="width: 200px;" 
+                            class="save_edits btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Save Changes
+                            </button>
+                        </div>
                 </div>
-                    <div class="response-button">
-                        <button id="{{response.journal_response_id}}" type="button" style="width: 200px;" 
-                        class="save_edits btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Save Changes
-                        </button>
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Changes Saved!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-            </div>
-        </div>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Changes Saved!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body">
+                    Your edit has been saved.
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                Your edit has been saved.
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
-            </div>
-        </div>
-    {% endfor %}
-<script src="/static/thoughts_buttons.js"></script>
+        {% endfor %}
+    <script src="/static/thoughts_buttons.js"></script>
+</body>
 {% endblock %}
