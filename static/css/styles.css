@@ -92,6 +92,9 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
+    background: #f8ecdd;
+    background-image: url('../images/background2.jpg');
+    background-size: cover;
 }
 
 .survey-date-title{
@@ -126,7 +129,7 @@ body{
 .recenter-subcontainer{
     width: 60%;
     margin: 115px;
-    background: grey;
+    background: #a7a6a6;;
     padding: 100px;
     border-radius: 20px;
     box-shadow: 10px 10px black;
@@ -141,9 +144,12 @@ body{
 .response-box{
     height: 200px;
     width: 1000px;
-    resize: auto;
+    resize: none;
+    padding: 10px;
     margin: auto;
     text-align: justify;
+    outline: none;
+    border-radius: 20px;
 }
 
 .response-button{
@@ -151,6 +157,7 @@ body{
     padding-right: 150px;
     display: flex;
     justify-content: flex-end;
+    outline: none;
 }
 
 .response-title{
@@ -170,9 +177,13 @@ body{
 .survey-details-subcontainer{
     width: 60%;
     margin: 50px;
-    background: grey;
+    background: #a7a6a6;;
     padding: 100px;
     border-radius: 20px;
     box-shadow: 10px 10px black;
     /* text-align: center; */
+}
+
+.past-survey-container{
+    margin: 5px;
 }

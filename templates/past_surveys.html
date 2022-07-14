@@ -5,14 +5,11 @@
 
 {% block body %}
 <h1>{{session_user.name}}'s Survey Responses</h1>
-<ul>
     {% for survey in user_survey_answers %}
-        <li>
-            <a href="/survey-details/{{ survey.survey_answer_id }}">
-                {{ survey.date }}
-             </a>         
-        </li>   
+        <div class="past-survey-container">
+            <button type="button" onclick="location.href='/survey-details/{{ survey.survey_answer_id }}'" 
+             class="btn btn-outline-dark">{{ survey.date }}</button>
+        </div>
     {% endfor %}
-    </ul>
 
 {% endblock %}
