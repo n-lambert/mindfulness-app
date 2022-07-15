@@ -4,7 +4,7 @@
 {% block title %}Past Surveys{% endblock %}
 
 {% block body %}
-<h1 class="timecapsule-title">{{session_user.name}}'s Survey Responses</h1>
+<h1 class="past-survey-title">{{session_user.name}}'s Survey Responses</h1>
     {% for survey in user_survey_answers %}
         <div class="past-survey-container">
             <button type="button" onclick="location.href='/survey-details/{{ survey.survey_answer_id }}'" 

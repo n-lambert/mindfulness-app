@@ -45,7 +45,8 @@
 }
 
 .thoughts-background{
-    background-image: url("../images/background3.jpg");
+    background-image: url("../images/homepage.jpg");
+    background-attachment: fixed;
 }
 
 .homepage-title{
@@ -100,7 +101,7 @@
 body{
     font-family: 'Open Sans', sans-serif;
     background: #f8ecdd;
-    background-image: url('../images/background2.jpg');
+    background-image: url('../images/homepage.jpg');
     background-size: cover;
 }
 
@@ -137,8 +138,8 @@ body{
 .recenter-subcontainer{
     width: 60%;
     margin: 115px;
-    background: #a7a6a6;;
-    padding: 100px;
+    background: #fcd8d8d4;
+    padding: 90px;
     border-radius: 20px;
     box-shadow: 10px 10px black;
     text-align: center;
@@ -175,6 +176,12 @@ body{
 
 .timecapsule-title{
     margin: 10px;
+    text-align: center;
+}
+
+.past-survey-title{
+    margin: 10px;
+    text-align: right;
 }
 
 .survey-details-container{
@@ -183,17 +190,19 @@ body{
 }
 
 .survey-details-subcontainer{
-    width: 60%;
+    width: 55%;
     margin: 50px;
-    background: #a7a6a6;;
-    padding: 100px;
+    background: #fcd8d8f2;
+    padding: 70px;
     border-radius: 20px;
     box-shadow: 10px 10px black;
-    /* text-align: center; */
 }
 
 .past-survey-container{
-    margin: 5px;
+    /* margin: 5px; */
+    display: flex;
+    justify-content: right;
+    margin: 10px;
 }
 
 .homepage-container{
@@ -202,9 +211,9 @@ body{
 }
 
 .homepage-subcontainer{
-    width: 60%;
-    background: #a7a6a6;;
-    padding: 100px;
+    width: 45%;
+    background: #fcd8d8d4;
+    padding: 3%;
     border-radius: 20px;
     box-shadow: 10px 10px black;
     text-align: center;
@@ -217,7 +226,7 @@ body{
 
 .login-subcontainer{
     width: 35%;
-    background: #a7a6a6;
+    background: #fcd8d8d4;
     border-radius: 20px;
     box-shadow: 10px 10px black;
     text-align: center;
@@ -232,7 +241,7 @@ body{
 
 .account-subcontainer{
     width: 35%;
-    background: #a7a6a6;
+    background: #fcd8d8d4;
     border-radius: 20px;
     box-shadow: 10px 10px black;
     text-align: center;
@@ -247,7 +256,7 @@ body{
 
 .survey-subcontainer{
     width: 65%;
-    background: #a7a6a6;
+    background: #fcd8d8d4;
     border-radius: 20px;
     box-shadow: 10px 10px black;
     text-align: center;
@@ -262,7 +271,7 @@ body{
 
 .intake-subcontainer{
     width: 65%;
-    background: #a7a6a6;
+    background: #fcd8d8d4;
     border-radius: 20px;
     box-shadow: 10px 10px black;
     text-align: center;
@@ -272,18 +281,33 @@ body{
 
 .profile-container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
 }
 
 .profile-subcontainer{
-    width: 65%;
-    background: #a7a6a6;
+    width: 45%;
+    background: #fcd8d8d4;
     border-radius: 20px;
     box-shadow: 10px 10px black;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 40px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
+
+.profile-sub-subcontainer{
+    width: 103%;
+    background: #fcd8d8f2;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
 
 .profile-text{
     text-align: justify;
@@ -293,4 +317,12 @@ body{
 
 .profile-title{
     padding-top: 2%;
+}
+.chart-explanation{
+    padding: 5px;
+}
+
+.paper-plane{
+    display: flex;
+    justify-content: right;
 }

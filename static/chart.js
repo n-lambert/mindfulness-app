@@ -29,31 +29,31 @@ console.log(q5_data)
           {
             label: 'Mood',
             data: q1_data,
-            borderColor: randomColor(),
+            borderColor: "rgba(175, 162, 255, 0.8)",
           },
 
           {
             label: 'Calmness',
             data: q2_data, 
-            borderColor: randomColor(),
+            borderColor: "rgba(150, 97, 107, 0.8)",
           },
 
           {
             label: 'Care-Free',
             data: q3_data, 
-            borderColor: randomColor(),
+            borderColor: "rgba(104, 150, 137, 0.8)",
           },
 
           {
             label: 'Energetic',
             data: q4_data, 
-            borderColor: randomColor(),
+            borderColor: "rgba(122, 137, 194, 0.8)",
           },
 
           {
             label: 'Rested',
             data: q5_data, 
-            borderColor: randomColor(),
+            borderColor: "rgba(74, 111, 165, 0.8)",
           },
         ],
       },
